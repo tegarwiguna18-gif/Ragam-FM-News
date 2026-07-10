@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ragam FM News | Portal Berita & Artikel Karya Sendiri</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        utama: '#165DFF',
+                        sekunder: '#FF7D00',
+                        gelap: '#1E293B',
+                        terang: '#F8FAFC',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        berita: ['Merriweather', 'serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .bg-header {
+                background: linear-gradient(135deg, #165DFF 0%, #0F4CD0 100%);
+            }
+            .kartu-berita {
+                transition: all 0.3s ease;
+            }
+            .kartu-berita:hover {
+                transform: translateY(-4px);
+                box-shadow: 0 12px 24px rgba(22, 93, 255, 0.15);
+            }
+            .logo-tw {
+                background: linear-gradient(135deg, #165DFF, #FF7D00);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+        }
+    </style>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Meta Berbagi -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ragam FM News | Portal Berita & Artikel Karya Sendiri">
+    <meta property="og:description" content="Berita, pandangan, dan tulisan orisinal dari Creator Tegar Wiguna & Ragam FM Studio">
+    <meta property="og:image" content="https://i.imgur.com/8Z7XQfL.png">
+</head>
+<body class="bg-gray-50 font-sans text-gelap">
+
+    <!-- Header -->
+    <header class="bg-header text-white py-5 shadow-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="bg-white p-2 rounded-full">
+                    <span class="text-xl font-bold logo-tw">TW</span>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold">RAGAM FM NEWS</h1>
+                    <p class="text-xs text-blue-100">Portal Berita & Karya Tulisan Sendiri</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="#" class="hover:text-sekunder transition-colors">Beranda</a>
+                <a href="#kategori" class="hover:text-sekunder transition-colors">Kategori</a>
+                <a href="#tentang" class="hover:text-sekunder transition-colors">Tentang Kami</a>
+            </nav>
+            <button class="md:hidden text-xl" id="btnMenu">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <!-- Menu Mobile -->
+        <div id="menuMobile" class="hidden md:hidden bg-blue-900 px-4 py-3">
+            <a href="#" class="block py-2 text-white hover:text-sekunder">Beranda</a>
+            <a href="#kategori" class="block py-2 text-white hover:text-sekunder">Kategori</a>
+            <a href="#tentang" class="block py-2 text-white hover:text-sekunder">Tentang Kami</a>
+        </div>
+    </header>
+
+    <!-- Bagian Utama -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+        <!-- Berita Utama -->
+        <section class="mb-12">
+            <h2 class="text-lg font-semibold text-utama mb-4 flex items-center gap-2">
+                <i class="fa fa-star"></i> Berita Utama
+            </h2>
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden md:flex">
+                <div class="md:w-1/2 bg-gradient-to-br from-utama/20 to-sekunder/20 flex items-center justify-center p-8">
+                    <i class="fa fa-newspaper-o text-6xl text-utama/50"></i>
+                </div>
+                <div class="md:w-1/2 p-6">
+                    <span class="bg-sekunder text-white text-xs px-3 py-1 rounded-full">TERBARU</span>
+                    <h3 class="text-2xl font-bold mt-3 mb-2 font-berita">Selamat Datang di Ruang Tulisan Saya</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">Tempat di mana saya membagikan pemikiran, berita, pandangan, dan cerita orisinal secara bebas dan jujur. Semua tulisan di sini adalah karya sendiri yang dibuat dengan hati.</p>
+                    <p class="text-sm text-gray-500">Ditulis oleh: <strong>Tegar Wiguna</strong> • 10 Juli 2026</p>
+                    <a href="#artikel" class="inline-block mt-4 text-utama font-medium hover:underline">Baca Selengkapnya →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kategori -->
+        <section id="kategori" class="mb-12">
+            <h2 class="text-lg font-semibold text-utama mb-6 flex items-center gap-2">
+                <i class="fa fa-th-list"></i> Kategori Tulisan
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl text-center shadow kartu-berita cursor-pointer">
+                    <i class="fa fa-lightbulb-o text-2xl text-yellow-500 mb-2"></i>
+                    <p class="font-medium">Pemikiran</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl text-center shadow kartu-berita cursor-pointer">
+                    <i class="fa fa-music text-2xl text-purple-500 mb-2"></i>
+                    <p class="font-medium">Musik & Karya</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl text-center shadow kartu-berita cursor-pointer">
+                    <i class="fa fa-laptop text-2xl text-blue-500 mb-2"></i>
+                    <p class="font-medium">Teknologi</p>
+                </div>
+                <div class="bg-white p-4 rounded-xl text-center shadow kartu-berita cursor-pointer">
+                    <i class="fa fa-heart text-2xl text-red-500 mb-2"></i>
+                    <p class="font-medium">Kehidupan</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daftar Artikel -->
+        <section id="artikel" class="mb-12">
+            <h2 class="text-lg font-semibold text-utama mb-6 flex items-center gap-2">
+                <i class="fa fa-list-alt"></i> Tulisan Terbaru
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+                <!-- Contoh Artikel 1 -->
+                <div class="bg-white rounded-xl shadow overflow-hidden kartu-berita">
+                    <div class="h-36 bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+                        <i class="fa fa-pencil text-4xl text-blue-400"></i>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-lg mb-2 font-berita">Cara Menulis Artikel yang Jujur dan Menyenangkan</h4>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Berbagi pengalaman saya tentang bagaimana menuangkan ide ke dalam tulisan tanpa rasa takut dan ragu.</p>
+                        <p class="text-xs text-gray-400">10 Juli 2026 • Tegar Wiguna</p>
+                    </div>
+                </div>
+
+                <!-- Contoh Artikel 2 -->
+                <div class="bg-white rounded-xl shadow overflow-hidden kartu-berita">
+                    <div class="h-36 bg-gradient-to-br from-purple-100 to-purple-200 flex items-center justify-center">
+                        <i class="fa fa-music text-4xl text-purple-400"></i>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-lg mb-2 font-berita">Di Balik Lagu "Biji-Biji Kehidupan"</h4>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Menceritakan perjalanan dan makna mendalam yang ingin saya sampaikan lewat lagu ini.</p>
+                        <p class="text-xs text-gray-400">09 Juli 2026 • Tegar Wiguna</p>
+                    </div>
+                </div>
+
+                <!-- Contoh Artikel 3 -->
+                <div class="bg-white rounded-xl shadow overflow-hidden kartu-berita">
+                    <div class="h-36 bg-gradient-to-br from-green-100 to-green-200 flex items-center justify-center">
+                        <i class="fa fa-code text-4xl text-green-400"></i>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-bold text-lg mb-2 font-berita">Kekuatan Membuat Sesuatu Sendiri</h4>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Mengapa saya memilih membuat alat dan karya sendiri daripada hanya menggunakan yang sudah ada.</p>
+                        <p class="text-xs text-gray-400">08 Juli 2026 • Tegar Wiguna</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Cara Menambah Artikel Baru -->
+            <div class="mt-10 p-6 bg-blue-50 rounded-xl border border-blue-200">
+                <h3 class="font-semibold text-utama mb-3 flex items-center gap-2">
+                    <i class="fa fa-plus-circle"></i> Cara Menulis & Menambahkan Artikel Sendiri
+                </h3>
+                <ol class="list-decimal list-inside text-sm text-gray-700 space-y-2">
+                    <li>Buat file baru dengan format: <code class="bg-blue-100 px-2 rounded">2026-07-10-judul-artikel-saya.html</code></li>
+                    <li>Salin kerangka artikel di bawah, ganti judul, tanggal, dan isi dengan tulisanmu</li>
+                    <li>Unggah file ke repositori ini</li>
+                    <li>Di halaman utama, tambahkan kartu baru dengan link menuju file tersebut</li>
+                </ol>
+                <p class="text-xs text-gray-500 mt-2">Sangat mudah! Tanpa butuh aplikasi tambahan, cukup tulis langsung di GitHub.</p>
+            </div>
+        </section>
+
+        <!-- Tentang -->
+        <section id="tentang" class="mb-12">
+            <div class="bg-white rounded-2xl shadow p-6">
+                <h2 class="text-lg font-semibold text-utama mb-4 flex items-center gap-2">
+                    <i class="fa fa-user-circle"></i> Tentang Portal Ini
+                </h2>
+                <p class="text-gray-700 leading-relaxed mb-4">
+                    <strong>Ragam FM News</strong> adalah ruang pribadi sekaligus portal berita tempat saya membagikan segala tulisan, pandangan, cerita, dan informasi yang saya buat sendiri. Bebas, jujur, dan sepenuhnya orisinal.
+                </p>
+                <div class="flex flex-wrap gap-4 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fa fa-pencil text-utama"></i>
+                        <span>Penulis: Creator Tegar Wiguna</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa fa-music text-sekunder"></i>
+                        <span>Channel: Ragam FM Studio</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa fa-bolt text-yellow-500"></i>
+                        <span>"THE POWER OF CALCULATOR"</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gelap text-white py-8 px-4">
+        <div class="max-w-6xl mx-auto text-center text-sm space-y-2">
+            <p class="font-medium text-lg">RAGAM FM NEWS</p>
+            <p>Portal Berita & Tulisan Karya Sendiri</p>
+            <p>Dibuat oleh: Creator Tegar Wiguna | Bagian dari "THE POWER OF CALCULATOR"</p>
+            <p>© 2026 Semua Hak Cipta Dilindungi</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Mobile
+        const btnMenu = document.getElementById('btnMenu');
+        const menuMobile = document.getElementById('menuMobile');
+        btnMenu.addEventListener('click', () => {
+            menuMobile.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
